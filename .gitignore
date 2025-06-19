@@ -1,6 +1,7 @@
-# Ignore Swift Package Manager build artifacts directory.
-.build/
-.*-build/
+# Ignore Swift Package Manager build artifacts directory
+build
+.build
+.*-build
 
 # Ignore SwiftPM state, such as the generated xcodeproj when opening the project directly
 .swiftpm
@@ -13,22 +14,12 @@ xcuserdata/
 # Ignore VScode workspace settings and launch configurations
 .vscode
 
-# Ignore bazel symlinks
-/bazel-*
-
-# Ignore cmake build configuration and output
-build/
-
-# Ignore any fixed dependency versions.
+# Ignore any fixed dependency versions
 Package.resolved
 
+# Ignore general os files
 .DS_Store
 *.pyc
 
 # Ignore performance test baselines
 baselines.json
-
-# The local build of swift-format to format swift-syntax
-.swift-format-build
-
-swift-syntax-dev-utils
