@@ -1,6 +1,8 @@
 # Contributing
 
-This document contains notes about development and testing of jmespath, the [Contributor Documentation](Contributor%20Documentation) folder has some more in-depth documents.
+The following document contains notes about development and testing. Please see 
+[the `Documentation` directory](./Documentation) for more additional development-related
+specifics.
 
 ## Building & Testing
 
@@ -69,4 +71,4 @@ The following package has additional verification methods that provide more exte
 
 ## Swift Version
 
-We require that jmespath builds with the latest released compiler and the previous major version (e.g. with Swift 5.8 and Swift 5.7).
+We require builds with the version specified in `.swift-version`.
