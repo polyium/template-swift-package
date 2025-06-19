@@ -6,18 +6,18 @@ import PackageDescription
 let package = Package(
     name: "example",
     platforms: [
-        .macOS(.v26),
+        .macOS(.v26)
     ],
     products: [
         .executable(
             name: "example",
             targets: ["Example"]
-        ),
+        )
     ],
     dependencies: [
         // MARK: - Core Runtime Dependencies
         .package(url: "https://github.com/apple/swift-log.git", branch: "main"),
-        
+
         .package(name: "swift-package-template", path: "../.."),
     ],
     targets: [
@@ -27,9 +27,9 @@ let package = Package(
             name: "Example",
             dependencies: [
                 .product(name: "Library", package: "swift-package-template"),
-                .product(name: "Logging", package: "swift-log")
+                .product(name: "Logging", package: "swift-log"),
             ],
-        ),
+        )
     ]
 )
 

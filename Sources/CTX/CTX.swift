@@ -51,7 +51,7 @@ public struct Keyer: Sendable {
 
     /// A key override for the instance's ``name``.
     private let override: String?
-    
+
     //public let overrides: Overrides = .init()
 
     /// A human-readable String representation of the underlying key.
@@ -85,21 +85,21 @@ public struct CTX: Sendable {
 extension CTX {
     public func items() -> [(Keyer, Any)] {
         var v: [(Keyer, Any)] = []
-        
+
         self.storage.forEach { key, value in
             v.append((key, value))
         }
-        
+
         return v
     }
-    
+
     public func map() -> [Keyer: Any] {
         var v: [Keyer: Any] = [:]
-        
+
         self.storage.forEach { key, value in
             v[key] = value
         }
-        
+
         return v
     }
 }
@@ -164,14 +164,14 @@ extension CTX {
     ) -> CTX {
         var context = CTX()
         #if CTXSTRICT
-        fatalError("CTXSTRICT: @ \(file):\(line) (function \(function)), reason: \(reason)")
+            fatalError("CTXSTRICT: @ \(file):\(line) (function \(function)), reason: \(reason)")
         #else
-        context[Key.self] = .init(file: file, line: line)
+            context[Key.self] = .init(file: file, line: line)
         #endif
-        
+
         return context
     }
-    
+
     private enum Key: Contextual {
         typealias Value = Location.Placeholder
         static var override: String? { "Placeholder" }
@@ -271,17 +271,17 @@ extension CTX {
     }
 
     #if compiler(>=6.0)
-    /// Convenience API to bind the task-local ``CTX/current`` to the passed `value`, and execute the passed `operation`.
-    ///
-    /// To access the task-local value, use `CTX.current`.
-    ///
-    /// SeeAlso: [Swift Task Locals](https://developer.apple.com/documentation/swift/tasklocal)
-    public static func withValue<T>(
-        _ value: CTX?,
-        isolation: isolated (any Actor)? = #isolation,
-        operation: () async throws -> T
-    ) async rethrows -> T {
-        try await CTX.$current.withValue(value, operation: operation)
-    }
+        /// Convenience API to bind the task-local ``CTX/current`` to the passed `value`, and execute the passed `operation`.
+        ///
+        /// To access the task-local value, use `CTX.current`.
+        ///
+        /// SeeAlso: [Swift Task Locals](https://developer.apple.com/documentation/swift/tasklocal)
+        public static func withValue<T>(
+            _ value: CTX?,
+            isolation: isolated (any Actor)? = #isolation,
+            operation: () async throws -> T
+        ) async rethrows -> T {
+            try await CTX.$current.withValue(value, operation: operation)
+        }
     #endif
 }

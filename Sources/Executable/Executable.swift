@@ -1,7 +1,5 @@
 import Foundation
-
 import Library
-
 import Logging
 
 internal func initialize() {
@@ -16,12 +14,12 @@ internal func initialize() {
 @main
 public struct Executable: Sendable {
     fileprivate static let logger = Logger(label: "io.polyium.apple.swift-package-template")
-    
+
     public static func main() async {
         initialize()
-        
+
         logger.notice("Example Executable ...")
-        
+
         print("Hello World")
     }
 }
