@@ -1,3 +1,5 @@
+.github/** linguist-vendored
+
 # Identify generated files still required to be version controlled
 **/generated/** linguist-generated
 
