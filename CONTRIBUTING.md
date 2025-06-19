@@ -29,7 +29,7 @@ swift format --in-place --parallel --recursive .
 Generated source code is not formatted to make it easier to spot changes when re-running code generation.
 
 > [!NOTE]
-> You can add a git hook to ensure all commits to the jmespath repository are correctly formatted.
+> You can add a git hook to ensure all commits are correctly formatted.
 > 1. Save the following contents to `.git/hooks/pre-commit`
 > ```bash
 > #!/usr/bin/env bash
