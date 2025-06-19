@@ -1,0 +1,249 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Swift Data Configuration Schema",
+  "description": "Schema for Swift Data configuration files",
+  "type": "object",
+  "required": ["version", "indentation"],
+  "properties": {
+    "version": {
+      "type": "integer",
+      "description": "The version of the Swift Data configuration format",
+      "minimum": 1
+    },
+    "indentation": {
+      "type": "object",
+      "required": ["spaces"],
+      "properties": {
+        "spaces": {
+          "type": "integer",
+          "description": "Number of spaces to use for indentation",
+          "minimum": 1
+        }
+      }
+    },
+    "tabWidth": {
+      "type": "integer",
+      "description": "Width of a tab character in spaces",
+      "minimum": 1
+    },
+    "fileScopedDeclarationPrivacy": {
+      "type": "object",
+      "required": ["accessLevel"],
+      "properties": {
+        "accessLevel": {
+          "type": "string",
+          "enum": ["private", "fileprivate", "internal", "public", "open"],
+          "description": "Default access level for file-scoped declarations"
+        }
+      }
+    },
+    "spacesAroundRangeFormationOperators": {
+      "type": "boolean",
+      "description": "Whether to add spaces around range formation operators"
+    },
+    "indentConditionalCompilationBlocks": {
+      "type": "boolean",
+      "description": "Whether to indent conditional compilation blocks"
+    },
+    "indentSwitchCaseLabels": {
+      "type": "boolean",
+      "description": "Whether to indent switch case labels"
+    },
+    "lineBreakAroundMultilineExpressionChainComponents": {
+      "type": "boolean",
+      "description": "Whether to add line breaks around multiline expression chain components"
+    },
+    "lineBreakBeforeControlFlowKeywords": {
+      "type": "boolean",
+      "description": "Whether to add line breaks before control flow keywords"
+    },
+    "lineBreakBeforeEachArgument": {
+      "type": "boolean",
+      "description": "Whether to add line breaks before each argument"
+    },
+    "lineBreakBeforeEachGenericRequirement": {
+      "type": "boolean",
+      "description": "Whether to add line breaks before each generic requirement"
+    },
+    "lineLength": {
+      "type": "integer",
+      "description": "Maximum line length",
+      "minimum": 1
+    },
+    "maximumBlankLines": {
+      "type": "integer",
+      "description": "Maximum number of consecutive blank lines",
+      "minimum": 0
+    },
+    "respectsExistingLineBreaks": {
+      "type": "boolean",
+      "description": "Whether to respect existing line breaks"
+    },
+    "prioritizeKeepingFunctionOutputTogether": {
+      "type": "boolean",
+      "description": "Whether to prioritize keeping function output together"
+    },
+    "rules": {
+      "type": "object",
+      "description": "Formatting rules configuration",
+      "properties": {
+        "AllPublicDeclarationsHaveDocumentation": {
+          "type": "boolean",
+          "description": "Whether all public declarations must have documentation"
+        },
+        "AlwaysUseLiteralForEmptyCollectionInit": {
+          "type": "boolean",
+          "description": "Whether to always use literal syntax for empty collection initialization"
+        },
+        "AlwaysUseLowerCamelCase": {
+          "type": "boolean",
+          "description": "Whether to always use lower camel case for identifiers"
+        },
+        "AmbiguousTrailingClosureOverload": {
+          "type": "boolean",
+          "description": "Whether to handle ambiguous trailing closure overloads"
+        },
+        "BeginDocumentationCommentWithOneLineSummary": {
+          "type": "boolean",
+          "description": "Whether documentation comments must begin with a one-line summary"
+        },
+        "DoNotUseSemicolons": {
+          "type": "boolean",
+          "description": "Whether to disallow semicolons"
+        },
+        "DontRepeatTypeInStaticProperties": {
+          "type": "boolean",
+          "description": "Whether to avoid repeating type in static properties"
+        },
+        "FileScopedDeclarationPrivacy": {
+          "type": "boolean",
+          "description": "Whether to enforce file-scoped declaration privacy"
+        },
+        "FullyIndirectEnum": {
+          "type": "boolean",
+          "description": "Whether to make enums fully indirect"
+        },
+        "GroupNumericLiterals": {
+          "type": "boolean",
+          "description": "Whether to group numeric literals"
+        },
+        "IdentifiersMustBeASCII": {
+          "type": "boolean",
+          "description": "Whether identifiers must be ASCII"
+        },
+        "NeverForceUnwrap": {
+          "type": "boolean",
+          "description": "Whether to disallow force unwrapping"
+        },
+        "NeverUseForceTry": {
+          "type": "boolean",
+          "description": "Whether to disallow force try"
+        },
+        "NeverUseImplicitlyUnwrappedOptionals": {
+          "type": "boolean",
+          "description": "Whether to disallow implicitly unwrapped optionals"
+        },
+        "NoAccessLevelOnExtensionDeclaration": {
+          "type": "boolean",
+          "description": "Whether to disallow access level on extension declarations"
+        },
+        "NoAssignmentInExpressions": {
+          "type": "boolean",
+          "description": "Whether to disallow assignments in expressions"
+        },
+        "NoBlockComments": {
+          "type": "boolean",
+          "description": "Whether to disallow block comments"
+        },
+        "NoCasesWithOnlyFallthrough": {
+          "type": "boolean",
+          "description": "Whether to disallow cases with only fallthrough"
+        },
+        "NoEmptyTrailingClosureParentheses": {
+          "type": "boolean",
+          "description": "Whether to disallow empty trailing closure parentheses"
+        },
+        "NoLabelsInCasePatterns": {
+          "type": "boolean",
+          "description": "Whether to disallow labels in case patterns"
+        },
+        "NoLeadingUnderscores": {
+          "type": "boolean",
+          "description": "Whether to disallow leading underscores"
+        },
+        "NoParensAroundConditions": {
+          "type": "boolean",
+          "description": "Whether to disallow parentheses around conditions"
+        },
+        "NoVoidReturnOnFunctionSignature": {
+          "type": "boolean",
+          "description": "Whether to disallow void return on function signatures"
+        },
+        "OmitExplicitReturns": {
+          "type": "boolean",
+          "description": "Whether to omit explicit returns"
+        },
+        "OneCasePerLine": {
+          "type": "boolean",
+          "description": "Whether to put one case per line"
+        },
+        "OneVariableDeclarationPerLine": {
+          "type": "boolean",
+          "description": "Whether to put one variable declaration per line"
+        },
+        "OnlyOneTrailingClosureArgument": {
+          "type": "boolean",
+          "description": "Whether to allow only one trailing closure argument"
+        },
+        "OrderedImports": {
+          "type": "boolean",
+          "description": "Whether to order imports"
+        },
+        "ReplaceForEachWithForLoop": {
+          "type": "boolean",
+          "description": "Whether to replace forEach with for loop"
+        },
+        "ReturnVoidInsteadOfEmptyTuple": {
+          "type": "boolean",
+          "description": "Whether to return void instead of empty tuple"
+        },
+        "UseEarlyExits": {
+          "type": "boolean",
+          "description": "Whether to use early exits"
+        },
+        "UseExplicitNilCheckInConditions": {
+          "type": "boolean",
+          "description": "Whether to use explicit nil checks in conditions"
+        },
+        "UseLetInEveryBoundCaseVariable": {
+          "type": "boolean",
+          "description": "Whether to use let in every bound case variable"
+        },
+        "UseShorthandTypeNames": {
+          "type": "boolean",
+          "description": "Whether to use shorthand type names"
+        },
+        "UseSingleLinePropertyGetter": {
+          "type": "boolean",
+          "description": "Whether to use single line property getters"
+        },
+        "UseSynthesizedInitializer": {
+          "type": "boolean",
+          "description": "Whether to use synthesized initializers"
+        },
+        "UseTripleSlashForDocumentationComments": {
+          "type": "boolean",
+          "description": "Whether to use triple slash for documentation comments"
+        },
+        "UseWhereClausesInForLoops": {
+          "type": "boolean",
+          "description": "Whether to use where clauses in for loops"
+        },
+        "ValidateDocumentationComments": {
+          "type": "boolean",
+          "description": "Whether to validate documentation comments"
+        }
+      }
+    }
+  }
+} 
