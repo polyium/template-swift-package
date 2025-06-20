@@ -1,0 +1,42 @@
+{
+  "originHash" : "820a3bfe9ae3a0cdda1e1cda59e6e0f3bfd8dbac610258ccd79996c7a132464c",
+  "pins" : [
+    {
+      "identity" : "swift-log",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-log.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "81d3d07f1439ddcf3df61b2128857ab7532a5804"
+      }
+    },
+    {
+      "identity" : "swift-play-experimental",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-play-experimental.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "6707fe72239fc84efefe16c3bfa45230c6e08f53"
+      }
+    },
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swiftlang/swift-syntax.git",
+      "state" : {
+        "revision" : "0dff260d3d1bb99c382d8dfcd6bb093e5e9cbd36",
+        "version" : "602.0.0-prerelease-2025-05-29"
+      }
+    },
+    {
+      "identity" : "swift-testing",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swiftlang/swift-testing.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "e63d542c824859916234e2a1307697056e1712d1"
+      }
+    }
+  ],
+  "version" : 3
+}
