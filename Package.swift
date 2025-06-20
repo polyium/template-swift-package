@@ -20,7 +20,7 @@ enum Development {
     }
 }
 
-let mode: Development = .lax
+let mode: Development = .strict
 
 /// strict concurrency settings for swift.
 let settings: [SwiftSetting] = {
@@ -28,8 +28,9 @@ let settings: [SwiftSetting] = {
 
     configurations.append(contentsOf: [
         .enableUpcomingFeature("StrictConcurrency")
+        
     ])
-
+    
     switch mode {
     case .strict:
         configurations.append(
@@ -87,6 +88,7 @@ let package = Package(
                 .product(name: "Playgrounds", package: "swift-play-experimental")
             ],
             swiftSettings: settings,
+            
         ),
 
         // MARK: - Public
@@ -102,9 +104,9 @@ let package = Package(
             dependencies: [
                 "Internal"
             ],
-            swiftSettings: settings,
+            swiftSettings: settings
         ),
-
+        
         // MARK: - Executable
 
         .executableTarget(
